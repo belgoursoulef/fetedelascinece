@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test QR Code</title>
+    <script src="static/js/html5-qrcode.min.js"></script>
+</head>
+<body>
+    <input type="file" id="qr-input-file" accept="image/*">
+    <div id="result"></div>
+    <script>
+        const fileinput = document.getElementById('qr-input-file');
+        const html5QrCode = new Html5Qrcode("reader");
+        fileinput.addEventListener('change', e => {
+            if (e.target.files.length == 0) return;
+            const imageFile = e.target.files[0];
+            Html5Qrcode.scanFile(imageFile, true)
+                .then(decodedText => {
+                    document.getElementById('result').innerText = "SUCCESS: " + decodedText;
+                    console.log("SUCCESS", decodedText);
+                    document.getElementById('result').dataset.status = "SUCCESS";
+                    
+                    try {
+                        const parsed = JSON.parse(decodedText);
+                        document.getElementById('result').innerText += "\nJSON PARSED: " + JSON.stringify(parsed);
+                    } catch (err) {
+                        document.getElementById('result').innerText += "\nJSON ERROR: " + err;
+                    }
+                })
+                .catch(err => {
+                    document.getElementById('result').innerText = "ERROR: " + err;
+                    console.log("ERROR", err);
+                    document.getElementById('result').dataset.status = "ERROR";
+                });
+        });
+    </script>
+</body>
+</html>

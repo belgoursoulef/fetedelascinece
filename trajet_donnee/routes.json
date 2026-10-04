@@ -1,0 +1,242 @@
+{
+    "77ffbb3e": {
+        "name": "Burger - Pain Supérieur",
+        "meal": "Burger",
+        "part": "Pain Supérieur",
+        "path": [
+            18,
+            12,
+            1,
+            17
+        ],
+        "destination": "Arrivée"
+    },
+    "e63eae61": {
+        "name": "Burger - Salade",
+        "meal": "Burger",
+        "part": "Salade",
+        "path": [
+            1,
+            15,
+            3,
+            5
+        ],
+        "destination": "Arrivée"
+    },
+    "632dcb1a": {
+        "name": "Burger - Tomate",
+        "meal": "Burger",
+        "part": "Tomate",
+        "path": [
+            16,
+            2,
+            19,
+            13
+        ],
+        "destination": "Arrivée"
+    },
+    "adb4175c": {
+        "name": "Burger - Viande",
+        "meal": "Burger",
+        "part": "Viande",
+        "path": [
+            1,
+            7,
+            2,
+            8
+        ],
+        "destination": "Arrivée"
+    },
+    "ec118551": {
+        "name": "Burger - Pain Inférieur",
+        "meal": "Burger",
+        "part": "Pain Inférieur",
+        "path": [
+            6,
+            7,
+            1,
+            8
+        ],
+        "destination": "Arrivée"
+    },
+    "d189f4cf": {
+        "name": "Pizza - Pâte",
+        "meal": "Pizza",
+        "part": "Pâte",
+        "path": [
+            4,
+            2,
+            6,
+            15
+        ],
+        "destination": "Arrivée"
+    },
+    "cf28c666": {
+        "name": "Pizza - Sauce Tomate",
+        "meal": "Pizza",
+        "part": "Sauce Tomate",
+        "path": [
+            7,
+            4,
+            2,
+            18
+        ],
+        "destination": "Arrivée"
+    },
+    "9f8a5e77": {
+        "name": "Pizza - Fromage",
+        "meal": "Pizza",
+        "part": "Fromage",
+        "path": [
+            15,
+            18,
+            16,
+            19
+        ],
+        "destination": "Arrivée"
+    },
+    "75f75994": {
+        "name": "Pizza - Olives",
+        "meal": "Pizza",
+        "part": "Olives",
+        "path": [
+            7,
+            8,
+            11,
+            5
+        ],
+        "destination": "Arrivée"
+    },
+    "f8d812cd": {
+        "name": "Pizza - Jambon",
+        "meal": "Pizza",
+        "part": "Jambon",
+        "path": [
+            2,
+            10,
+            9,
+            3
+        ],
+        "destination": "Arrivée"
+    },
+    "4a1c03e6": {
+        "name": "Tacos - Galette",
+        "meal": "Tacos",
+        "part": "Galette",
+        "path": [
+            6,
+            17,
+            8,
+            16
+        ],
+        "destination": "Arrivée"
+    },
+    "92ac9afa": {
+        "name": "Tacos - Frites",
+        "meal": "Tacos",
+        "part": "Frites",
+        "path": [
+            13,
+            1,
+            19,
+            11
+        ],
+        "destination": "Arrivée"
+    },
+    "e541ad93": {
+        "name": "Tacos - Viande Hachée",
+        "meal": "Tacos",
+        "part": "Viande Hachée",
+        "path": [
+            4,
+            15,
+            13,
+            3
+        ],
+        "destination": "Arrivée"
+    },
+    "37b6f83f": {
+        "name": "Tacos - Sauce Fromagère",
+        "meal": "Tacos",
+        "part": "Sauce Fromagère",
+        "path": [
+            4,
+            5,
+            13,
+            17
+        ],
+        "destination": "Arrivée"
+    },
+    "ee630bcd": {
+        "name": "Tacos - Salade",
+        "meal": "Tacos",
+        "part": "Salade",
+        "path": [
+            18,
+            10,
+            19,
+            9
+        ],
+        "destination": "Arrivée"
+    },
+    "4b17d1a9": {
+        "name": "Sushi - Riz",
+        "meal": "Sushi",
+        "part": "Riz",
+        "path": [
+            15,
+            5,
+            13,
+            17
+        ],
+        "destination": "Arrivée"
+    },
+    "4226f1aa": {
+        "name": "Sushi - Algue Nori",
+        "meal": "Sushi",
+        "part": "Algue Nori",
+        "path": [
+            13,
+            18,
+            1,
+            14
+        ],
+        "destination": "Arrivée"
+    },
+    "d3ac5866": {
+        "name": "Sushi - Saumon",
+        "meal": "Sushi",
+        "part": "Saumon",
+        "path": [
+            11,
+            1,
+            13,
+            17
+        ],
+        "destination": "Arrivée"
+    },
+    "90abffd1": {
+        "name": "Sushi - Avocat",
+        "meal": "Sushi",
+        "part": "Avocat",
+        "path": [
+            13,
+            15,
+            18,
+            1
+        ],
+        "destination": "Arrivée"
+    },
+    "7f8492af": {
+        "name": "Sushi - Sauce Soja",
+        "meal": "Sushi",
+        "part": "Sauce Soja",
+        "path": [
+            13,
+            12,
+            15,
+            16
+        ],
+        "destination": "Arrivée"
+    }
+}
