@@ -10,7 +10,7 @@ ROUTERS_COUNT = 15
 MEALS = {
     "Burger": ["Pain Supérieur", "Salade", "Tomate", "Viande", "Pain Inférieur"],
     "Glace": ["Chocolat", "Vanille", "Fraise", "Pistache"],
-    "Tacos": ["Galette", "Frites", "Viande Hachée", "Sauce Fromagère", "Salade"],
+    "Gâteaux": ["Cerise", "Chocolat", "Vanille", "Fraise", "Pistache"],
     "Boissons": ["Lipton Ice Tea", "Sprite", "Fanta", "Coca-Cola Zero"],
     "Snack": ["Tasty Crousti"]
 }
