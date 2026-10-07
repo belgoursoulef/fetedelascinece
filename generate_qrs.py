@@ -9,7 +9,7 @@ ROUTERS_COUNT = 15
 
 MEALS = {
     "Burger": ["Pain Supérieur", "Salade", "Tomate", "Viande", "Pain Inférieur"],
-    "Pizza": ["Pâte", "Sauce Tomate", "Fromage", "Olives", "Jambon"],
+    "Glace": ["Chocolat", "Vanille", "Fraise", "Pistache"],
     "Tacos": ["Galette", "Frites", "Viande Hachée", "Sauce Fromagère", "Salade"],
     "Sushi": ["Riz", "Algue Nori", "Saumon", "Avocat", "Sauce Soja"]
 }

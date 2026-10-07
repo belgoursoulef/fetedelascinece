@@ -133,4 +133,4 @@ def scan():
 if __name__ == "__main__":
     # Load routes on startup to ensure no crash
     print(f"Loaded {len(routes)} routes.")
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run(host="10.31.25.81", port=5000, debug=True, ssl_context="adhoc")
