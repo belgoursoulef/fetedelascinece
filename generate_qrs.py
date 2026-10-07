@@ -11,15 +11,18 @@ MEALS = {
     "Burger": ["Pain Supérieur", "Salade", "Tomate", "Viande", "Pain Inférieur"],
     "Glace": ["Chocolat", "Vanille", "Fraise", "Pistache"],
     "Tacos": ["Galette", "Frites", "Viande Hachée", "Sauce Fromagère", "Salade"],
-    "Sushi": ["Riz", "Algue Nori", "Saumon", "Avocat", "Sauce Soja"]
+    "Boissons": ["Lipton Ice Tea", "Sprite", "Fanta", "Coca-Cola Zero"],
+    "Snack": ["Tasty Crousti"]
 }
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 OUTPUT_DIR = os.path.join(BASE_DIR, "qrs")
 ROUTES_FILE = os.path.join(BASE_DIR, "routes.json")
 
-if not os.path.exists(OUTPUT_DIR):
-    os.makedirs(OUTPUT_DIR)
+if os.path.exists(OUTPUT_DIR):
+    import shutil
+    shutil.rmtree(OUTPUT_DIR, ignore_errors=True)
+os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 routes = {}
 
