@@ -52,51 +52,50 @@ def scan():
         
     current_step = packet_states[packet_id]
     
-    # Scenario 1: Départ
-    if pc_id == "Départ":
+    # Scenario 1: Départ (Initial Scan)
+    if pc_id == "Départ" and current_step == -1:
         packet_states[packet_id] = 0 # Now waiting for first node in path
+        next_hop = path[0]
+        hop_str = "1 (Départ)" if next_hop == 1 else "15 (Arrivée)" if next_hop == 15 else str(next_hop)
         return jsonify({
             "status": "success",
-            "message": f"Paquet envoyé ! Votre premier saut est le PC numéro : {path[0]}",
+            "message": f"Paquet envoyé ! Votre premier saut est le PC : {hop_str}",
             "packet_name": packet_info["name"]
         })
         
-    # Scenario 2: Arrivée
-    if pc_id == "Arrivée":
-        if current_step == len(path):
-            packet_states[packet_id] = len(path) + 1 # Arrived !
-            return jsonify({
-                "status": "success",
-                "message": f"Félicitations ! Le paquet est arrivé à destination.",
-                "packet_name": packet_info["name"],
-                "arrived": True
-            })
-        else:
-            expected_pc = path[current_step] if 0 <= current_step < len(path) else "Départ"
-            return jsonify({
-                "status": "error",
-                "message": "Erreur : Le paquet a sauté une étape !",
-                "details": f"Veuillez vous rendre au prochain saut attendu : PC {expected_pc}."
-            })
-            
-    # Scenario 3: Router PC (1 to 19)
-    try:
-        pc_id_int = int(pc_id)
-    except ValueError:
-        return jsonify({"status": "error", "message": "Identifiant PC invalide."})
+    # Scenario 2: Arrivée (Final Delivery)
+    if pc_id == "Arrivée" and current_step == len(path):
+        packet_states[packet_id] = len(path) + 1 # Arrived !
+        return jsonify({
+            "status": "success",
+            "message": f"Félicitations ! Le paquet est arrivé à destination.",
+            "packet_name": packet_info["name"],
+            "arrived": True
+        })
         
+    # Scenario 3: Router PC (or Départ/Arrivée acting as routers)
+    if pc_id == "Départ":
+        pc_id_int = 1
+    elif pc_id == "Arrivée":
+        pc_id_int = 15
+    else:
+        try:
+            pc_id_int = int(pc_id)
+        except ValueError:
+            return jsonify({"status": "error", "message": "Identifiant PC invalide."})
+            
     if current_step < 0:
         return jsonify({
             "status": "error",
             "message": "Erreur de routage : Ce paquet n'a pas encore quitté le poste Départ.",
-            "details": "Veuillez vous rendre d'abord au poste 'Départ'."
+            "details": "Veuillez vous rendre d'abord au PC 1 (Départ) pour commencer."
         })
         
     if current_step >= len(path):
         return jsonify({
             "status": "error",
             "message": "Le paquet a déjà fini son trajet dans le réseau.",
-            "details": "Rendez-vous à l'Arrivée pour le livrer."
+            "details": "Rendez-vous au PC 15 (Arrivée) pour le livrer."
         })
         
     # Check if the scanned PC is the EXPECTED next hop
@@ -110,24 +109,26 @@ def scan():
         # What is the next hop?
         if current_step < len(path):
             next_hop = path[current_step]
+            hop_str = "1 (Départ)" if next_hop == 1 else "15 (Arrivée)" if next_hop == 15 else str(next_hop)
             return jsonify({
                 "status": "success",
-                "message": f"Bravo ! Votre prochain saut est : PC {next_hop}",
+                "message": f"Bravo ! Votre prochain saut est : PC {hop_str}",
                 "packet_name": packet_info["name"]
             })
         else:
             return jsonify({
                 "status": "success",
                 "message": "Dernier saut validé !",
-                "details": "Allez livrer le paquet au poste 'Arrivée'.",
+                "details": "Allez livrer le paquet au PC 15 (Arrivée).",
                 "packet_name": packet_info["name"]
             })
     else:
         # Error: wrong path
+        exp_str = "1 (Départ)" if expected_pc == 1 else "15 (Arrivée)" if expected_pc == 15 else str(expected_pc)
         return jsonify({
             "status": "error",
-            "message": f"Erreur de Routage ! Vous deviez aller au PC {expected_pc}.",
-            "details": f"Paquet mal aiguillé. Retournez au PC {expected_pc}."
+            "message": f"Erreur de Routage ! Vous deviez aller au PC {exp_str}.",
+            "details": f"Paquet mal aiguillé. Retournez au PC {exp_str}."
         })
 
 if __name__ == "__main__":

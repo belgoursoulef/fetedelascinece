@@ -16,13 +16,13 @@
         <h1>Configuration du Routeur</h1>
         <p>Sélectionnez le rôle de cet ordinateur sur le réseau :</p>
         <select id="pc-role">
-            <option value="Départ">Rôle : PC Départ (Expéditeur)</option>
+            <option value="Départ">Rôle : PC 1 - Départ (Expéditeur)</option>
             <script>
-                for (let i = 1; i <= 15; i++) {
+                for (let i = 2; i <= 14; i++) {
                     document.write(`<option value="${i}">Rôle : PC Routeur N°${i}</option>`);
                 }
             </script>
-            <option value="Arrivée">Rôle : PC Arrivée (Destinataire)</option>
+            <option value="Arrivée">Rôle : PC 15 - Arrivée (Destinataire)</option>
         </select>
         <button id="start-btn">Activer le Routeur</button>
     </div>
@@ -61,9 +61,9 @@
             scannerScreen.classList.remove('hidden');
 
             if (currentRole === "Départ") {
-                currentRoleDisplay.textContent = "💻 Poste de Départ";
+                currentRoleDisplay.textContent = "💻 PC 1 - Poste de Départ";
             } else if (currentRole === "Arrivée") {
-                currentRoleDisplay.textContent = "🏁 Poste d'Arrivée";
+                currentRoleDisplay.textContent = "🏁 PC 15 - Poste d'Arrivée";
             } else {
                 currentRoleDisplay.textContent = "🔄 PC Routeur N°" + currentRole;
             }
